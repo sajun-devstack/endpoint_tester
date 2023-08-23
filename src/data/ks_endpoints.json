@@ -1,0 +1,5 @@
+{
+    "logs": ["GET", "/kapis/clusters/{cluster}/tenant.kubesphere.io/v1alpha2/logs"],
+    "cluster-query": ["GET", "/kapis/monitoring.kubesphere.io/v1alpha3/targets/query"],
+    "namespace-query": ["GET", "/kapis/monitoring.kubesphere.io/v1alpha3/namespaces/{namespace}/targets/query"]
+}

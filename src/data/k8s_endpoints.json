@@ -1,0 +1,10 @@
+{
+    "root": ["GET", "/"],
+    "namespaces": ["GET", "/api/v1/namespaces"],
+    "pods": ["GET", "/api/v1/namespaces/{namespace}/pods"],
+    "secrets": ["GET", "/api/v1/namespaces/{namespace}/secrets"],
+    "serviceaccounts": ["GET", "/api/v1/namespaces/{namespace}/serviceaccounts"],
+    "services": ["GET", "/api/v1/namespaces/{namespace}/services"],
+    "roles": ["GET", "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles"],
+    "clusterroles": ["GET", "/apis/rbac.authorization.k8s.io/v1/clusterroles/{name}"]
+}
