@@ -1,10 +1,13 @@
 {
     "root": ["GET", "/"],
-    "namespaces": ["GET", "/api/v1/namespaces"],
-    "pods": ["GET", "/api/v1/namespaces/{namespace}/pods"],
-    "secrets": ["GET", "/api/v1/namespaces/{namespace}/secrets"],
-    "serviceaccounts": ["GET", "/api/v1/namespaces/{namespace}/serviceaccounts"],
-    "services": ["GET", "/api/v1/namespaces/{namespace}/services"],
-    "roles": ["GET", "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles"],
-    "clusterroles": ["GET", "/apis/rbac.authorization.k8s.io/v1/clusterroles/{name}"]
+    "metrics": ["GET", "/metrics"],
+    "namespaces": ["GET", "/api/v1/namespaces/{name}"],
+    "pods": ["GET", "/api/v1/namespaces/{namespace}/pods/{name}"],
+    "secrets": ["GET", "/api/v1/namespaces/{namespace}/secrets/{name}"],
+    "serviceaccounts": ["GET", "/api/v1/namespaces/{namespace}/serviceaccounts/{name}"],
+    "services": ["GET", "/api/v1/namespaces/{namespace}/services/{name}"],
+    "roles": ["GET", "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles/{name}"],
+    "rolebindings": ["GET", "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings/{name}"],
+    "clusterroles": ["GET", "/apis/rbac.authorization.k8s.io/v1/clusterroles/{name}"],
+    "clusterrolebindings": ["GET", "/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/{name}"]
 }

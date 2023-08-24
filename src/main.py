@@ -23,6 +23,9 @@ with open('data/ks_endpoints.json', 'r') as f:
     ks_endpoints = json.loads('\n'.join(f.readlines()))
 KSEndpointName = Enum('KSpointName', {k:k for k in ks_endpoints.keys()})
 
+class RequesterType(Enum):
+    serviceaccount = 'serviceaccount'
+    user = 'user'
 
 def _create_serviceaccount(name, roles, clusterroles):
     # create serviceaccount
@@ -74,7 +77,12 @@ def _request(method, url, serviceaccount):
     except e:
         raise HTTPException(status_code=e.status_code, detail=e.reason)
 
-    return {"url": url, "response": response.json()}
+    if "text" in response.headers["Content-Type"]:
+        response_body = response.text
+    elif "json" in response.headers["Content-Type"]:
+        response_body = response.json()
+
+    return response_body
 
 
 @app.post("/kubernetes/{endpoint_name}")

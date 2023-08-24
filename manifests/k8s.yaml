@@ -54,13 +54,12 @@ spec:
     spec:
       serviceAccountName: tester
       containers:
-      - image: tester:latest
+      - image: polariche/tester:latest
         name: tester
         args:
         - "main:app"
         ports:
         - containerPort: 80
-        imagePullPolicy: Never
         env:
         - name: REQUESTS_CA_BUNDLE
           value: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
